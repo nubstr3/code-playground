@@ -1,0 +1,242 @@
+<html>
+  <head>
+    <title>CodePlayground Questions</title>
+    <link rel="stylesheet" type="text/css" href="question.css">
+		<link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet" />
+    <script src="test.json"></script>
+		
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../homepageAuth/Homepage.html"><img src="logo.png" alt="logo">CodePlayground</a>
+      </div>
+
+        <ul class="menu" id="dropdown">
+
+          <li id="HomeButton"><a href="../homepageAuth/Homepage.html">Home</a></li>
+          <li id="AboutButton"><a href="../homepageAuth/Homepage.html#AboutShow">About Us</a></li>
+          <li id="QuestionsButton"><a href="../question page/questionpage1.html">Questions</a></li>
+          <li id="DiscussionsButton"><a href="../discussion page/discussionmain.html">Discussions</a></li>
+          <li id="ContactButton"><a href="../homepageAuth/Homepage.html#ContactShow">Contact Us</a></li>
+          <li><a href ="#"><ion-icon name="person-outline"></ion-icon></a>
+            <ul>
+              <li><a href="../profile/index.html">Your Profile</a></li>
+              <li><a href="#">Sign Out</a></li>
+            </ul>
+          </li>
+        
+        </ul> 
+    </nav>
+
+    
+
+
+      
+
+      <div>
+        <button class="Topic-1"  ><span><a class = "button-text-color" href="../creation page/creation.html">Creat New question </a></span></button>
+    </div>
+
+  <div class="questionbox" id="questionbox">
+      <div class="box1">
+        <P style="margin: auto; color: white;">Tittle</P>
+        <p style="margin-top: -23px; margin-left: 80%; color: white;">Difficulty</p>
+      </div>
+
+
+  
+  </div>
+
+
+    
+    <script>
+
+      fetch("test.json") //read json
+        .then(Response => Response.json())
+        .then(data =>{
+            console.log(data.question) // shows it in console
+            var myobj = data.question;
+            var count = Object.keys(myobj).length; // get the len of json
+            console.log(count);
+
+        for(var i=0;i<count;i++){
+            var j = i+3
+            var div = document.createElement("div") // creat new div with border and structure
+            div.className = "box2";
+            div.id = "box"+j;
+            var elemen = document.getElementById("questionbox"); // inside questionbox class
+            elemen.appendChild(div);
+
+            var para = document.createElement("h3"); // creat new title and put the data in as read json file
+            var node = document.createTextNode(data.question[i].title);
+            para.className = "questiont";
+            para.appendChild(node);
+            var element = document.getElementById("box"+j); 
+            element.appendChild(para);
+
+            var para1 = document.createElement("p"); // new diffculty and data
+            para1.className = "questiond";
+            var node1 = document.createTextNode(data.question[i].Difficulty);
+            para1.appendChild(node1);
+            var elementdiff = document.getElementById("box"+j);
+            elementdiff.appendChild(para1);
+
+            var deleteb = document.createElement("button") // new dele button
+            deleteb.className = "delete-button";
+            deleteb.id = "delete"+j;
+            var elementd = document.getElementById("box"+j);
+            elementd.appendChild(deleteb);
+                                                           
+            var d = document.createTextNode("Delete");
+            var elementtd = document.getElementById("delete"+j);
+            elementtd.appendChild(d);
+
+            var solveb = document.createElement("button") // new solve button
+            solveb.className = "solve-button";
+            solveb.id = "sbutton"+i;
+            var elements = document.getElementById("box"+j);
+            elements.appendChild(solveb);
+
+            var s = document.createTextNode("Solve");
+            var elementts = document.getElementById("sbutton"+i);
+            elementts.appendChild(s);
+            const solveButton = document.getElementById("sbutton"+i);
+            solveButton.addEventListener('click',goToWebsite)
+
+          }
+
+
+
+          const deleteButton2 = document.getElementById('delete3');
+
+          deleteButton2.addEventListener('click', () => {
+              var child = document.getElementById('box3');
+              child.parentNode.removeChild(child);
+          });  
+            const deleteButton3 = document.getElementById('delete4');
+
+          deleteButton3.addEventListener('click', () => {
+              var child = document.getElementById('box4');
+              child.parentNode.removeChild(child);
+          });  
+          const deleteButton4 = document.getElementById('delete5');
+
+          deleteButton4.addEventListener('click', () => {
+              var child = document.getElementById('box5');
+              child.parentNode.removeChild(child);
+          });  
+          const deleteButton5 = document.getElementById('delete6');
+
+          deleteButton5.addEventListener('click', () => {
+              var child = document.getElementById('box6');
+              child.parentNode.removeChild(child);
+          });  
+          const deleteButton6 = document.getElementById('delete7');
+
+          deleteButton6.addEventListener('click', () => {
+              var child = document.getElementById('box7');
+              child.parentNode.removeChild(child);
+          });  
+            const deleteButton7 = document.getElementById('delete8');
+
+          deleteButton7.addEventListener('click', () => {
+              var child = document.getElementById('box8');
+              child.parentNode.removeChild(child);
+          });  
+          const deleteButton8 = document.getElementById('delete9');
+
+          deleteButton8.addEventListener('click', () => {
+              var child = document.getElementById('box9');
+              child.parentNode.removeChild(child);
+          });  
+          const deleteButton9 = document.getElementById('delete10');
+
+          deleteButton9.addEventListener('click', () => {
+              var child = document.getElementById('box10');
+              child.parentNode.removeChild(child);
+          });  
+          const deleteButton10 = document.getElementById('delete11');
+
+          deleteButton10.addEventListener('click', () => {
+              var child = document.getElementById('box11');
+              child.parentNode.removeChild(child);
+          });  
+            const deleteButton11 = document.getElementById('delete12');
+
+          deleteButton11.addEventListener('click', () => {
+              var child = document.getElementById('box12');
+              child.parentNode.removeChild(child);
+          });  
+          const deleteButton12 = document.getElementById('delete13');
+
+          deleteButton12.addEventListener('click', () => {
+              var child = document.getElementById('box13');
+              child.parentNode.removeChild(child);
+          });  
+          const deleteButton13 = document.getElementById('delete14');
+
+          deleteButton13.addEventListener('click', () => {
+              var child = document.getElementById('box14');
+              child.parentNode.removeChild(child);
+          });  
+          const deleteButton14 = document.getElementById('delete15');
+
+          deleteButton14.addEventListener('click', () => {
+              var child = document.getElementById('box15');
+              child.parentNode.removeChild(child);
+          });  
+
+          function goToWebsite(){
+            window.location.href = "http://localhost:8000/team37-Code-Playground/solution%20page/solution%20page.html"
+          }
+
+
+      })
+       
+
+
+
+    </script>
+    <footer>
+      <div class="cont">
+        <ul class="flex-row">
+          <li id="HomeButton"><a href="#">Home</a></li>
+          <li id="AboutButton"><a href="#">About Us</a></li>
+          <li id="ContactButton"><a href="#">Questions</a></li>
+          <li id="ContactButton"><a href="#">Discussions</a></li>
+          <li id="ContactButton"><a href="#">Contact Us</a></li>
+
+        </ul>
+        <p>Copyright &copy; 2022 CodePlayground</p>
+      </div>
+    </footer>
+
+    <button onclick="topFunction()" class='custom-background-color' id="topBtn" title="Go to top">Top</button>
+    <script>
+    var topbutton = document.getElementById("topBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topbutton.style.display = "block";
+      } else {
+        topbutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the web 
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+  </body>
+
+
+
+</html>

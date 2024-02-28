@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CodePlayground Home</title>
+    <link rel="stylesheet" type="text/css" href="solution.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    
+  </head>
+      <body>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="../homepageAuth/Homepage.html"><img src="logo.png" alt="logo">CodePlayground</a> 
+          </div>
+    
+            
+            <ul class="menu" id="dropdown">
+              <li id="HomeButton"><a href="../homepageAuth/Homepage.html">Home</a></li>
+              <li id="AboutButton"><a href="../homepageAuth/Homepage.html#AboutShow">About Us</a></li>
+              <li id="QuestionsButton"><a href="../question page/questionpage1.html">Questions</a></li>
+              <li id="DiscussionsButton"><a href="../discussion page/discussionmain.html">Discussions</a></li>
+              <li id="ContactButton"><a href="../homepageAuth/Homepage.html#ContactShow">Contact Us</a></li>
+              <li><a href ="#"><ion-icon name="person-outline"></ion-icon></a>
+            <ul>
+              <li><a href="../profile/index.html">Your Profile</a></li>
+              <li><a href="#">Sign Out</a></li>
+            </ul>
+        </nav>
+
+        <div class="SolutionQuestionBox">
+          <div class="content">
+            <h1 id="questionName">{{ qdetail.title }}</h1>
+            <p id="description">
+              {{ qdetail.details }}
+            </p>
+            <p> Please use <b id="functionCode">{{ qdetail.fun_name }}</b></p>
+            
+
+          </div>
+        </div>
+
+        <div class="SolutionAnswerBox">
+          <div class="SolutionHeader">
+            <h1>Answer</h1> <button onclick="runTestCode()" id="RunButton">Run</button> <button id="HintButton">Hint</button>
+          </div>
+
+          <div class="editor-container">
+              <div id="editor" onkeyup="updateCode()"></div>
+              <div class="blankbox">
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+                <p>1</p>
+              </div>
+          </div>
+
+          <div class="OutputBox">
+            <p>Code Status: </p><p id="OutputCode"><i class="fa fa-question-circle-o" aria-hidden="true"></i></p>
+          </div>
+
+          <div class="HiddenCode">
+            <div id="mainCode">{{ qdetail.code }}</div>
+            <div id="expectedOutput">{{ qdetail.qoutput }}</div>
+          </div>
+        </div>
+
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <div class="modal-content"><p id="hintContent">{{ qdetail.hint }}</div>
+        </div>
+
+        <div class="container">
+          <div class="popup" id="popup">
+            <img src="happyKoala.png">
+            <h2>Well Done!</h2>
+            <p>Happy Koala approves of your work. Nice one!</p>
+            <button type="button" onclick="closePopup()">OK</button>
+          </div>
+        </div>
+
+        <form action="{% url 'check' %}" method="post">
+          <input type="hidden" name="useroutput" id="formUsersOutput">
+          <input type="hidden" name="subcode" id="formStudentsCode">
+          <div class="SolutionFooter">
+            <h1></h1> <button onclick="openPopup()" type="submit" class="btn" id="SubmitButton">Submit</button><button class="CancelButton"><a href="../question page/questionpage1.html">Cancel</a></button>
+          </div>
+        </form>
+  
+
+        <footer>
+          <div class="cont">
+            <ul class="flex-row">
+              <li id="HomeButton"><a href="#">Home</a></li>
+              <li id="AboutButton"><a href="#">About Us</a></li>
+              <li id="QuestionButton"><a href="#">Questions</a></li>
+              <li id="DiscussionButton"><a href="#">Discussions</a></li>
+              <li id="ContactButton"><a href="#">Contact Us</a></li>
+         
+            </ul>
+            <p>Copyright &copy; 2022 CodePlayground</p>
+          </div>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
+        <script src="main.js"></script>
+      </body>
+</html>

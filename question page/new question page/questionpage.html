@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CodePlayground Questions</title>
+    <link rel="stylesheet" type="text/css" href="question.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://cdn.bootcss.com/font-awesome/5.8.0/css/all.css" rel="stylesheet" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#"><img src="logo.png" alt="logo">CodePlayground</a>
+        </div>
+        <ul class="menu" id="dropdown">
+            <li id="HomeButton"><a href="#">Home</a></li>
+            <li id="AboutButton"><a href="#">About Us</a></li>
+            <li id="QuestionsButton"><a href="#">Questions</a></li>
+            <li id="DiscussionsButton"><a href="#">Discussions</a></li>
+            <li id="ContactButton"><a href="#">Contact Us</a></li>
+            <li>
+                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                <ul>
+                    <li><a href="#">Admin</a></li>
+                    <li><a href="#">Sign Out</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <h2>Solve Programming Exercises</h2>
+    <form action="#" method="get">
+        <div class="search-box">
+            <input type="text" name="keyword" class="search-txt" placeholder="Type to search">
+            <div class="search-btn">
+                <button type="submit" class="btn btn-default"><i style='font-size:24px' class='fas'>&#xf002;</i></button>
+            </div>
+        </div>
+    </form>
+    <form action="{% url 'quehome' 1 %}" method="get">
+        <div class="topic">
+            <input type="submit" name="topic" value="All Topic">
+            <input type="submit" name="topic" value="Topic 1">
+            <input type="submit" name="topic" value="Topic 2">
+            <input type="submit" name="topic" value="Topic 3">
+        </div>
+    </form>
+
+    <!-- <form action="#" method="get">
+        <div class="search-box">
+            <input class="search-txt" type="text" placeholder="Type to search" />
+            <a class="search-btn" href="#">
+              <i style='font-size:24px' class='fas'>&#xf002;</i>
+            </a>
+          </div>
+        </form>> -->
+    
+    <p></p>
+   
+    <div>
+        <button class="Topic-1"><span><a class="button-text-color" href="#">Create Question</a></span></button>
+    </div>
+
+    <div class="box-body table-responsive no-padding">
+        <table class="table table-hover" style="width: 100%; border-collapse: collapse;">
+            <tr style="font-size:30px;margin:auto;background-color:  rgb(6, 165, 6); ">
+                <th>QID</th>
+                <th style="width:60%">Title</th>
+                <th>Acceptance</th>
+                <th>Difficulty</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="#">Largest element in an array</a></td>
+                <td>80%</td>
+                <td>
+                    <span style="color:green">Easy</span>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="#">Split the array and add the first part to the end</a></td>
+                <td>20%</td>
+                <td>
+                    <span style="color:blue">Medium</span>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td><a href="#">Check if a string is palindrome or not</a></td>
+                <td>27%</td>
+                <td>
+                    <span style="color:red">Hard</span>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="#">this is a test</a></td>
+                <td>63%</td>
+                <td>
+                    <span style="color:blue">Medium</span>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="#">Largest element in an array</a></td>
+                <td>80%</td>
+                <td>
+                    <span style="color:green">Easy</span>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="#">Split the array and add the first part to the end</a></td>
+                <td>20%</td>
+                <td>
+                    <span style="color:blue">Medium</span>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td><a href="#">Check if a string is palindrome or not</a></td>
+                <td>27%</td>
+                <td>
+                    <span style="color:red">Hard</span>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="#">this is a test</a></td>
+                <td>63%</td>
+                <td>
+                    <span style="color:blue">Medium</span>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="#">Largest element in an array</a></td>
+                <td>80%</td>
+                <td>
+                    <span style="color:green">Easy</span>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="#">Split the array and add the first part to the end</a></td>
+                <td>20%</td>
+                <td>
+                    <span style="color:blue">Medium</span>
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td><a href="#">Check if a string is palindrome or not</a></td>
+                <td>27%</td>
+                <td>
+                    <span style="color:red">Hard</span>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="#">this is a test</a></td>
+                <td>63%</td>
+                <td>
+                    <span style="color:blue">Medium</span>
+                </td>
+
+
+            </tr>
+        </table>
+    </div>
+
+    <button onclick="topFunction()" class='custom-background-color' id="topBtn" title="Go to top">Top</button>
+    <script>
+    var topbutton = document.getElementById("topBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        topbutton.style.display = "block";
+      } else {
+        topbutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the web
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+    <div class="">
+        <ul class="page"  >
+            <li><a href="#">&laquo;</a></li>
+
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </div>
+
+    <footer>
+        <div class="cont">
+            <ul class="flex-row">
+                <li id="HomeButton"><a href="#">Home</a></li>
+                <li id="AboutButton"><a href="#">About Us</a></li>
+                <li id="QuestionsButton"><a href="#">Questions</a></li>
+                <li id="DiscussionsButton"><a href="#">Discussions</a></li>
+                <li id="ContactButton"><a href="#">Contact Us</a></li>
+            </ul>
+            <p>Copyright &copy; 2022 CodePlayground</p>
+        </div>
+    </footer>
+</body>
+</html>

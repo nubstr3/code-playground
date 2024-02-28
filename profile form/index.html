@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username Email Form</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <button onclick="escape()" id="close-button">&times;</button>
+        <label for="title">Change User Details</label><br><br>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter new username" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter new email" required>
+        <p id="message"></p>
+        <input type="button" onclick="checkUsername()" value="SUBMIT"/>
+        
+    </form>
+    
+    <script src="script.js"></script>
+</body>
+</html>
