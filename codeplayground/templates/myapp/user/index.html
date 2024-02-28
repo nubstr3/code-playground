@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Card</title>
+    <link rel="stylesheet" href="/static/user/styles.css">
+    <link rel="stylesheet" href="/static/user/dele.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="/static/user/script.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="left">
+            <img src="/static/user/koala.png" alt="user" width="100">
+            <br>
+            <br>
+            <h4>User Page</h4>
+            <h2>{{ info.username }}</h2>
+        </div>
+        <div class="right">
+            <div class="info">
+                <button onclick="backToHome()" id="backToHome">Back</button>
+                <h3>Information</h3>
+                <div class="info_data">
+                    <div class="data">
+                        <h4>Username</h4>
+                        <p>{{ info.username }}</p>
+
+                    </div>
+                    <div class="data">
+                        <h4>Email</h4>
+                        <p>{{ info.emailname }}<br>{{ info.emailadd }}</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="profileButtons">
+                <button onclick="editProfile()" id="updateUserProfile">Update Details</button>
+                <div id="inlineSpacer"></div>
+                <button onclick="editPassword()" id="changePassword">Change Password</button>
+            </div>
+
+            <div class="projects">
+                <h3>Projects</h3>
+                <div class="projects_data">
+                    <div class="data">
+                        <h4>Question</h4>
+                        <p>Correct: {{ info.qpass }}</p>
+                        <p>Total Try: {{ info.qtry }}</p>
+                    </div>
+                    <div class="data">
+                        <h4>Creation time</h4>
+                        <p>{{ info.addtime|date:'d/m/y' }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social_media">
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><button id="delete" name="delete" onclick="onDelete()"><i class="fas fa-user-times"></i></button></li>
+                    <div id="confirmation" class="modal-container">
+                        <div class="modal">
+                            <section>
+                                <header class="modal-header">
+                                    <span onclick="onCancel()">&times;</span>
+                                    <h2>Delete Account</h2>
+                                </header>
+                                <section class="modal-content">
+                                    <p>Are you sure you wish to delete your account?</p>
+                                </section>
+                                <footer class="modal-footer">
+                                    <button class="modal-confirm-button" onclick="onConfirm()">Confirm</button>
+                                    <button class="modal-button" onclick="onCancel()">Cancel</button>
+                                </footer>
+                            </section>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="/static/user/script.js"></script>
+</body>
+</html>

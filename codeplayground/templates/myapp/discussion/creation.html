@@ -1,0 +1,41 @@
+{% extends "myapp/home1/home1base.html" %}
+
+{% block head %}
+<title>Creation page</title>
+<link rel="stylesheet" type="text/css" href="/static/discussionpage/creation.css">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+{% endblock %}
+
+{% block home %}
+<br>
+<br>
+<br>
+<div class="bigbox">Title</div>
+<input type="text" id="input" onkeyup="updateTitleValue()">
+
+<div class="bigbox">Description</div>
+<textarea id="description" onkeyup="updateDescriptionValue()"></textarea>
+
+
+
+<form action="{% url 'docreatd' %}" method="post">
+    <input type="hidden" name="title" id="formTitle">
+    <input type="hidden" name="details" id="formDescription">
+    <div class="buttons">
+
+        <h1></h1> <button id="uploadBtn" type="submit" class="upload-button" onclick="openPopup()">Upload</button>
+        <div class="popup" id="popup">
+            <img src="/static/creationpage/winkingKoala.png">
+            <h2>Koality Work!</h2>
+            <p>Winking Koala approves. Good Job!</p>
+            <button type="button" onclick="closePopup2()">OK</button>
+        </div>
+        <button class="delete-button"><a href="{% url 'dishome' 1 %}">Cancel</a></button>
+    </div>
+    {% csrf_token %}
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
+<script src="/static/creationpage/creation.js"></script>
+{% endblock %}

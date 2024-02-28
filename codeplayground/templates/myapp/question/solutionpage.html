@@ -1,0 +1,83 @@
+{% extends "myapp/home1/home1base.html" %}
+
+{% block head %}
+<title>CodePlayground Home</title>
+<link rel="stylesheet" type="text/css" href="/static/solutionpage/solution.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+{% endblock %}
+
+
+{% block home %}
+<div class="SolutionQuestionBox">
+    <div class="content">
+        <h1 id="questionName">{{ qdetail.title }}</h1>
+        <p id="description">{{ qdetail.details }}</p>
+        <p> Please use <b id="functionCode">{{ qdetail.fun_name }}</b></p>
+    </div>
+</div>
+
+<div class="SolutionAnswerBox">
+    <div class="SolutionHeader">
+        <h1>Answer</h1> <button onclick="runTestCode()" id="RunButton">Run</button> <button id="HintButton">Hint</button>
+    </div>
+
+    <div class="editor-container">
+        <div id="editor" onkeyup="updateCode()">{{ qdetail.fun_name }}:
+    pass</div>
+        <div class="blankbox">
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>~</p>
+        </div>
+    </div>
+
+    <div class="OutputBox">
+        <p>Code Status: </p><p id="OutputCode"><i class="fa fa-question-circle-o" aria-hidden="true"></i></p>
+    </div>
+
+    <div class="HiddenCode">
+        <div id="mainCode">{{ qdetail.code }}</div>
+        <div id="expectedOutput">{{ qdetail.qoutput }}</div>
+
+    </div>
+
+
+
+    <form action="{% url 'check' qdetail.id %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="pss" id="formResult">
+        <input type="hidden" name="subcode" id="formStudentsCode">
+        <div class="SolutionFooter">
+            <h1></h1> <button onclick="openPopup()" type="submit" class="btn" id="SubmitButton">Submit</button><button class="CancelButton"><a href="{% url 'quehome' 1 %}">Cancel</a></button>
+        </div>
+    </form>
+
+
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content"><p id="hintContent">{{ qdetail.hint }}</div>
+</div>
+
+<div class="container">
+    <div class="popup" id="popup">
+        <img src="/static/solutionpage/happyKoala.png">
+        <h2>Well Done!</h2>
+        <p>Happy Koala approves of your work. Nice one!</p>
+        <button type="button" onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
+<script src="/static/solutionpage/main.js"></script>
+
+{% endblock %}

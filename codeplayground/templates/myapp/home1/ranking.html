@@ -1,0 +1,37 @@
+{% extends "myapp/home1/home1base.html" %}
+
+{% block head %}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="/static/homepage1/ranking.css">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<title>Ranking</title>
+{% endblock %}
+
+{% block home %}
+<div class="bg"></div>
+<div class="bg2"></div>
+<div class="bg3"></div>
+<div class="content">
+    <table class="table table-hover" style="width: 100%; border-collapse: collapse;">
+        <tr style="font-size:30px;margin:auto;background-color:  rgb(6, 165, 6); ">
+            <th style="width:20%">Rank</th>
+            <th style="width:20%">Username</th>
+            <th style="width:20%">Question Pass</th>
+            <th style="width:20%">Question Try</th>
+            <th style="width:20%">Passing Rate</th>
+        </tr>
+        {% for user in qpss %}
+        <tr>
+            <td>{{user.rank}}</td>
+            <td><a href="{% url 'otherusers' user.id %}">{{user.username}}</a></td>
+            <td>{{user.qpass}}</td>
+            <td>{{user.qtry}}</td>
+            <td>{{user.percen}}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</div>
+{% endblock %}

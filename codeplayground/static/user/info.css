@@ -1,0 +1,115 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(
+        45deg,
+      rgb(6, 165, 6),
+      #e0dee4
+    );
+}
+form{
+    background-color: #ffffff;
+    width: 450px;
+    padding: 50px 40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 14px;
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.15);
+}
+label{
+    font-weight: 1000;
+    color: #101030;
+}
+input{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 12px;
+    border-radius: 5px;
+    outline: none;
+    color: #101010;
+}
+#fname{
+    margin-bottom: 20px;
+}
+#lname{
+    margin-bottom: 20px;
+}
+#username{
+    margin-bottom: 20px;
+   
+}
+input[type="username"]{
+    border: 2px solid #c2c2c2;
+}
+input[type="button"]{
+    padding: 10px 60px;
+    color:#fff;
+    background-color: rgb(6, 165, 6);
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500px;
+     border-radius: 30px;
+    box-shadow: 0 9px #999;
+    width: 200px;
+}
+input[type="button"]:hover{
+    background-color: #1c7a20;
+}
+input[type="button"]:active{
+    background-color: #236325;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+input[type="button"]:focus{
+    outline: none;
+}
+input[type="button"]:ghost{
+    background-color: transparent;
+    border-color: #FFFFFF;
+}
+
+
+p{
+    font-size: 14px;
+    margin: 15px 0;
+    display: inline-block;
+    color: #ffffff;
+}
+
+button{
+    width: 30px;
+    position: absolute;
+    margin: -30px 360px;
+    cursor: pointer;
+    border: none;
+    background-color: white;    
+   
+    font-size: 1.55rem;
+  }
+
+.sub {
+    padding: 10px 60px;
+    color: #fff;
+    background-color: rgb(6, 165, 6);
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500px;
+    border-radius: 30px;
+    box-shadow: 0 9px #999;
+    width: 190px;
+    margin-bottom: 25px;
+}

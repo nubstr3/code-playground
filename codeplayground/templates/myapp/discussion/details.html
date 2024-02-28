@@ -1,0 +1,59 @@
+{% extends "myapp/home1/home1base.html" %}
+
+{% block head %}
+<title>CodePlayground Discussions Questions</title>
+<link rel="stylesheet" type="text/css" href="/static/discussionpage/styles.css">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+{% endblock %}
+
+{% block home %}
+
+<div class="Questions" id="QuestionShow">
+    <button class="Back-button" id="BacktoQuetsions"><span><a class="button-text-color" href="{% url 'dishome' 1 %}">Back To Discussions</a></span></button>
+    <button class="Anwser-button" id="AnwserQuetsions"><span><a class="button-text-color" href="{% url 'answer' discussion.id %}">Express your opinion</a></span></button>
+    <div class="QuestionTitile">
+        <h1 class="QuestionsPageTittle">{{ discussion.title }}</h1>
+        <p class="QuestionsPageDetail">{{ discussion.details }}</p>
+    </div>
+</div>
+<div class="box-body table-responsive no-padding">
+    {% for msg in ud %}
+    <table class="table table-hover" style="width: 100%; border: 1px solid;">
+        <tr style="font-size:20px;margin:auto;color:white;">
+            <td style="float:left;"><a href="{% url 'otherusers' msg.user_id %}">{{ msg.username }}:</a></td>
+            <td style="float:right;">{{ msg.addtime }}</td>
+        </tr>
+        <tr>
+            <td style="float:left ;">{{ msg.speech }}</td>
+            {% if msg.user_id == user.id or discussion.user_id == user.id %}
+            <td class="dele"><a href="{% url 'd_dele' msg.id %}">delete</a></td>
+            {% endif %}
+        </tr>
+    </table>
+    {% endfor %}
+</div>
+
+
+<button onclick="topFunction()" class='custom-background-color' id="topBtn" title="Go to top">Top</button>
+<script>
+    var topbutton = document.getElementById("topBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topbutton.style.display = "block";
+        } else {
+            topbutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the web
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+{% endblock %}

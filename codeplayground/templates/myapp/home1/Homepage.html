@@ -1,0 +1,32 @@
+{% extends "myapp/home1/home1base.html" %}
+
+{% block home %}
+<div class="Home" id="HomeShow">
+    <br>
+    <div class="Welcome">
+        <h1>Welcome to CodePlayground!</h1>
+        <p>CodePlayground is the leading platform for beginners in coding to create their programming foundation in Python language! </p>
+        <img class="homepage1pic" src="/static/homepage/homepage1.png" alt="student learning to code">
+    </div>
+
+
+    <br>
+    <br>
+    <div class="SignIn">
+        <h1>Ranking Board</h1>
+        <button class="SignInButton" type="button"><a class="button-text-color" href="{% url 'rank' %}">Find It Out!</a></button>
+    </div>
+    <br>
+    <br>
+
+    <div class="Explore">
+        <h2>Explore!</h2>
+        <p>Create your very own questions or solve questions made by peers. Ask and discuss programming topics and queries!</p>
+        <img class="homepage2pic" src="/static/homepage/homepage2.png" alt="student exploring other languages">
+    </div>
+
+    <br>
+    <br>
+
+</div>
+{% endblock %}

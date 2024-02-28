@@ -1,0 +1,29 @@
+{% extends "myapp/home1/home1base.html" %}
+
+{% block head %}
+<title>CodePlayground Discussions Questions</title>
+<link rel="stylesheet" type="text/css" href="/static/discussionpage/styles.css">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+{% endblock %}
+
+{% block home %}
+
+<div class="AnswerQuestionsShow" id="AnswerQuestionsShow">
+    <button class="Back-button" id="BacktoQuetsions1"><span><a class="button-text-color" href="{% url 'detail_d' discussion.id %}">Back To Questions</a></span></button>
+    <div class="QuestionTitile">
+        <h1 class="QuestionsPageTittle">{{ discussion.title }}</h1>
+        <p class="QuestionsPageDetail">{{ discussion.details }}</p>
+    </div>
+
+    <div>
+        <h1 class="UserAnswerTittle">Your Answers</h1>
+        <!--Click the "Submit" button and the form-data will be sent to a page on the server called "action_page.php".-->
+        <form action="{% url 'doanswer' discussion.id %}" method="post">
+            {% csrf_token %}
+            <textarea id="textarea" name="speech"></textarea>
+            <input style="float:right; margin-right:174px; margin-top: 1050px" type="submit" value="Post Your Answer">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

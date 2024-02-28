@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <title>CodePlayground Home</title>
+    <link rel="stylesheet" type="text/css" href="/static/homepage/styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'home1' %}"><img src="/static/logo.png" alt="logo">CodePlayground</a>
+        </div>
+        <ul class="menu" id="dropdown">
+            <li id="HomeButton"><a href="{% url 'home1' %}">Home</a></li>
+            <li id="AboutButton"><a href="{% url 'about1' %}">About Us</a></li>
+            <li id="QuestionsButton"><a href="{% url 'quehome' 1 %}">Questions</a></li>
+            <li id="DiscussionsButton"><a href="{% url 'dishome' 1 %}">Discussions</a></li>
+            <li id="ContactButton"><a href="{% url 'contact1' %}">Contact Us</a></li>
+            <li>
+                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                <ul>
+                    <li><a href="{% url 'user' %}">{{request.session.loginuser.username}}</a></li>
+                    <li><a href="{% url 'logout' %}">Sign Out</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    {% block home %}
+    {% endblock %}
+
+    <footer>
+        <div class="cont">
+            <ul class="flex-row">
+                <li id="HomeButton"><a href="{% url 'home1' %}">Home</a></li>
+                <li id="AboutButton"><a href="{% url 'about1' %}">About Us</a></li>
+                <li id="QuestionsButton"><a href="{% url 'quehome' 1 %}">Questions</a></li>
+                <li id="DiscussionsButton"><a href="{% url 'dishome' 1 %}">Discussions</a></li>
+                <li id="ContactButton"><a href="{% url 'contact1' %}">Contact Us</a></li>
+            </ul>
+            <p>Copyright &copy; 2022 CodePlayground</p>
+        </div>
+    </footer>
+    <script src="/static/homepage1/navbar.js"></script>
+</body>
+</html>
