@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creation page</title>
+    <link rel="stylesheet" type="text/css" href="creation.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../homepageAuth/Homepage.html"><img src="logo.png" alt="logo">CodePlayground</a>
+        </div>
+
+        <ul class="menu" id="dropdown">
+
+            <li id="HomeButton"><a href="#">Home</a></li>
+            <li id="AboutButton"><a href="#">About Us</a></li>
+            <li id="QuestionsButton"><a href="../question page/questionpage1.html">Questions</a></li>
+            <li id="DiscussionsButton"><a href="../discussion page/discussionmain.html">Discussions</a></li>
+            <li id="ContactButton"><a href="#">Contact Us</a></li>
+            <li>
+                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                <ul>
+                    <li><a href="../profile/index.html">Your Profile</a></li>
+                    <li><a href="#">Sign Out</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <div class="bigbox">Title</div>
+    <input type="text" id="input" onkeyup="updateTitleValue()">
+    <div class="bigbox">
+        Topic
+    </div>
+    <div class="select">
+        <select id="slctTopic" onchange="updateTopicValue(this.value)">
+            <option value="0"></option>
+            <option value="1">Topic1</option>
+            <option value="2">Topic2</option>
+            <option value="3">Topic3</option>
+        </select>
+    </div>
+
+    <div class="bigbox">Description</div>
+    <input type="text" id="description" onkeyup="updateDescriptionValue()">
+
+    <div class="bigbox">Function name</div>
+    <input type="text" id="functionName" onkeyup="updateFunctionValue()">
+
+    
+
+    <div class="bigbox2">Code Stub<button onclick="runTestCode()" class="upload-button" id="runBtn">Run</button> </div>
+    <div class="bigbox3">Define the main() function and add in your input code, you may also want to test your own code with your own function. However submit <b>only the def main() and main() function.</b></div>
+    <div class="editor-container">
+        <div id="editor" onkeyup="updateCode()">def main():
+    print(function())
+
+def function():
+    pass
+
+main()
+        </div>
+        <div class="blankbox">
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+            <p>1</p>
+        </div>
+    </div>
+
+    <div class="OutputBox">
+        <p>Output </p><p id="OutputCode">?</p>
+    </div>
+
+    <div class="bigbox">Expected Output</div>
+    <input type="text" id="expected" onkeyup="updateExpectedValue()">
+
+    <div class="bigbox">
+        Difficulty
+    </div>
+    <div class="select">
+        <select id="slctTopic" onchange="updateDiffValue(this.value)">
+            <option value="0"></option>
+            <option value="1">Easy</option>
+            <option value="2">Medium</option>
+            <option value="3">Hard</option>
+        </select>
+    </div>
+
+    <div class="bigbox">Hint</div>
+    <input type="text" id="hint" onkeyup="updateHintValue()">
+    
+
+    <form action="{% url 'docreatq' %}" method="post">
+        <input type="text" name="title" id="formTitle">
+        <input type="text" name="category_id" id="formTopic">
+        <input type="text" name="details" id="formDescription">
+        <input type="text" name="fun_name" id="formFunctionName">
+        <input type="text" name="code" id="formMainCode">
+        <input type="text" name="qoutput" id="formExpectedOutput">
+        <input type="text" name="difficulty" id="formDifficulty">
+        <input type="text" name="hint" id="formHint">
+        <div class="buttons">
+            <h1></h1> <button id= "uploadBtn" type="submit" class="upload-button" onclick="openPopup()">Upload</button>
+            <div class="popup" id="popup">
+                <img src="winkingKoala.png">
+                <h2>Koality Work!</h2>
+                <p>Winking Koala approves. Good Job!</p>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+        </div>
+
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
+    <script src="creation.js"></script>
+
+</body>
+
+<footer>
+    <div class="cont">
+        <ul class="flex-row">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Questions</a></li>
+            <li><a href="#">Discussions</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <p>Copyright &copy; 2022 CodePlayground</p>
+    </div>
+</footer>

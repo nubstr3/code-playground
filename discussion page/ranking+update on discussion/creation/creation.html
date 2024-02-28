@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Creation page</title>
+<link rel="stylesheet" type="text/css" href="creation.css">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'home1' %}"><img src="logo.png" alt="logo">CodePlayground</a>
+        </div>
+        <ul class="menu" id="dropdown">
+            <li id="HomeButton"><a href="{% url 'home1' %}">Home</a></li>
+            <li id="AboutButton"><a href="{% url 'about1' %}">About Us</a></li>
+            <li id="QuestionsButton"><a href="{% url 'quehome' 1 %}">Questions</a></li>
+            <li id="DiscussionsButton"><a href="{% url 'dishome' 1 %}">Discussions</a></li>
+            <li id="ContactButton"><a href="{% url 'contact1' %}">Contact Us</a></li>
+            <li>
+                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                <ul>
+                    <li><a href="{% url 'user' %}">{{request.session.loginuser.username}}</a></li>
+                    <li><a href="{% url 'logout' %}">Sign Out</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+<br>
+<br>
+<br>
+<div class="bigbox">Title</div>
+<input type="text" id="input" onkeyup="updateTitleValue()">
+
+<div class="bigbox">Description</div>
+<textarea id="description" onkeyup="updateDescriptionValue()"></textarea>
+
+
+
+<form action="{% url 'docreatd' %}" method="post">
+    <input type="hidden" name="title" id="formTitle">
+    <input type="hidden" name="details" id="formDescription">
+    <div class="buttons">
+        <button  class="delete-button" >Delete</button>
+        <h1></h1> <button id="uploadBtn" type="submit" class="upload-button" onclick="openPopup()">Upload</button>
+        <div class="popup" id="popup">
+            <img src="/static/creationpage/winkingKoala.png">
+            <h2>Koality Work!</h2>
+            <p>Winking Koala approves. Good Job!</p>
+            <button type="button" onclick="closePopup2()">OK</button>
+        </div>
+    </div>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js"></script>
+<script src="/static/creationpage/creation.js"></script>
+    <footer>
+        <div class="cont">
+            <ul class="flex-row">
+                <li id="HomeButton"><a href="{% url 'home1' %}">Home</a></li>
+                <li id="AboutButton"><a href="{% url 'about1' %}">About Us</a></li>
+                <li id="QuestionsButton"><a href="{% url 'quehome' 1 %}">Questions</a></li>
+                <li id="DiscussionsButton"><a href="{% url 'dishome' 1 %}">Discussions</a></li>
+                <li id="ContactButton"><a href="{% url 'contact1' %}">Contact Us</a></li>
+            </ul>
+            <p>Copyright &copy; 2022 CodePlayground</p>
+        </div>
+    </footer>
+</body>
+</html>

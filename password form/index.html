@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Form</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <input type="button" class="mybutton" value="&times;" onclick="history.back()">        
+        <label for="old-password">Current Password</label>
+        <input type="password" id="old-password" placeholder="Enter old password" >
+        <label for="password">New Password</label>
+        <input type="password" id="password" placeholder="Enter new password" >
+        <label for="cnfrm-password">Confirm Password</label>
+        <input type="password" id="cnfrm-password" placeholder="Confirm password here" >
+        <p id="message"></p>
+        <input type="button" class="sub" onclick="checkPassword()" value="SUBMIT"/>
+       
+    </form>
+    
+    <script src="script.js"></script>
+</body>
+</html>

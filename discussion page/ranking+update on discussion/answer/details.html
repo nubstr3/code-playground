@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CodePlayground Discussions Questions</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{% url 'home1' %}"><img src="logo.png" alt="logo">CodePlayground</a>
+        </div>
+        <ul class="menu" id="dropdown">
+            <li id="HomeButton"><a href="{% url 'home1' %}">Home</a></li>
+            <li id="AboutButton"><a href="{% url 'about1' %}">About Us</a></li>
+            <li id="QuestionsButton"><a href="{% url 'quehome' 1 %}">Questions</a></li>
+            <li id="DiscussionsButton"><a href="{% url 'dishome' 1 %}">Discussions</a></li>
+            <li id="ContactButton"><a href="{% url 'contact1' %}">Contact Us</a></li>
+            <li>
+                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                <ul>
+                    <li><a href="{% url 'user' %}">{{request.session.loginuser.username}}</a></li>
+                    <li><a href="{% url 'logout' %}">Sign Out</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+<div class="Questions" id="QuestionShow">
+    <button class="Back-button" id="BacktoQuetsions"><span><a class="button-text-color" href="{% url 'dishome' 1 %}">Back To Discussions</a></span></button>
+    <button class="Anwser-button" id="AnwserQuetsions"><span><a class="button-text-color" href="{% url 'answer' discussion.id %}">Express your opinion</a></span></button>
+    <div class="QuestionTitile">
+        <h1 class="QuestionsPageTittle">{{ discussion.title }}</h1>
+        <h1 class="author">By ： Li</h1>
+        <p class="QuestionsPageDetail">{{ discussion.details }}</p>
+
+    </div>
+</div>
+<div class="box-body table-responsive no-padding">
+    <table class="table table-hover" style="width: 100%; border: 1px solid;">
+        <tr style="font-size:20px;margin:auto;color:white;">
+            <td style="float:left;"><a href="{% url 'otherusers' msg.user_id %}">{{ msg.username }}:</a></td>
+            <td style="float:right;">{{ msg.addtime }}</td>
+        </tr>
+
+        <tr>
+            <td class = "dele"><a href="{% url 'delusers' user.id %}');">delete</a></td>
+            <td style="float:left ;">{{ msg.speech }}</td>
+        </tr>
+    </table>
+<table class="table table-hover" style="width: 100%; border: 1px solid;">
+        <tr style="font-size:20px;margin:auto;color:white;">
+            <td style="float:left ;"><a href="{% url 'otherusers' msg.user_id %}">{{ msg.username }}:</a></td>
+            <td style="float:right;">{{ msg.addtime }}</td>
+            
+        </tr>
+
+        <tr>
+            <td class = "dele"><a href="{% url 'delusers' user.id %}');">delete</a></td>
+            <td style="float:left ;">{{ msg.speech }}</td>
+        </tr>
+    </table>
+<table class="table table-hover" style="width: 100%; border: 1px solid;">
+        <tr style="font-size:20px;margin:auto;color:white;">
+            <td style="float:left;"><a href="{% url 'otherusers' msg.user_id %}">{{ msg.username }}:</a></td>
+            <td style="float:right;">{{ msg.addtime }}</td>
+        </tr>
+
+        <tr>
+            <td class = "dele"><a href="{% url 'delusers' user.id %}');">delete</a></td>
+            <td style="float:left ;">{{ msg.speech }}</td>
+        </tr>
+    </table>
+<table class="table table-hover" style="width: 100%; border: 1px solid;">
+        <tr style="font-size:20px;margin:auto;color:white;">
+            <td style="float:left;"><a href="{% url 'otherusers' msg.user_id %}">{{ msg.username }}:</a></td>
+            <td style="float:right;">{{ msg.addtime }}</td>
+        </tr>
+
+        <tr>
+            <td class = "dele"><a href="{% url 'delusers' user.id %}');">delete</a></td>
+            <td style="float:left ;">{{ msg.speech }}</td>
+        </tr>
+    </table>
+</div>
+
+
+<button onclick="topFunction()" class='custom-background-color' id="topBtn" title="Go to top">Top</button>
+<script>
+    var topbutton = document.getElementById("topBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            topbutton.style.display = "block";
+        } else {
+            topbutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the web
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+    <footer>
+        <div class="cont">
+            <ul class="flex-row">
+                <li id="HomeButton"><a href="{% url 'home1' %}">Home</a></li>
+                <li id="AboutButton"><a href="{% url 'about1' %}">About Us</a></li>
+                <li id="QuestionsButton"><a href="{% url 'quehome' 1 %}">Questions</a></li>
+                <li id="DiscussionsButton"><a href="{% url 'dishome' 1 %}">Discussions</a></li>
+                <li id="ContactButton"><a href="{% url 'contact1' %}">Contact Us</a></li>
+            </ul>
+            <p>Copyright &copy; 2022 CodePlayground</p>
+        </div>
+    </footer>
+</body>
+</html>

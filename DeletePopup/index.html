@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Confirmation popup</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+ 
+ 
+  <body class="body">
+    <button id="delete" name="delete" onclick="onDelete()">Delete</button>
+    <div id="confirmation" class="modal-container">
+      <div class="modal">
+        <section>
+          <header class="modal-header">
+            <span onclick="onCancel()">&times;</span>
+            <h2>Delete Account</h2>
+          </header>
+          <section class="modal-content">
+            <p>Are you sure you wish to delete your account?</p>
+          </section>
+          <footer class="modal-footer">
+           
+            <button
+              class="modal-confirm-button"
+              onclick="onConfirm()"
+            >
+              Confirm
+            </button>
+            <button 
+            class="modal-button" onclick="onCancel()">Cancel
+          </button>
+           
+          </footer>
+        </section>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
